@@ -2,3 +2,8 @@ Hi all welcome to devops tools
 Now we are started the git tool
 And working with remote repository GitHub
 Git workflow explaing
+Now adding one more line for better understaing
+git workflow
+working area know command as git status
+stagiing area know command as git add 
+local repo know command as git commit -m 
