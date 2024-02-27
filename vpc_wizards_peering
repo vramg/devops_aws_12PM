@@ -1,0 +1,109 @@
+=================================================================================
+
+VPC Wizards
+
+Wizards simplifies our VPC, IGW , routing tables , subnets, security group and NAT and NATGATEWAYconfigurations.
+
+Currently we have 4 types of wizards
+
+VPC with public subnet
+
+VPC with public and private subnet
+
+VPC with Public and Private Subnets and Hardware VPN Access
+
+VPC with a Private Subnet Only and Hardware VPN Access.
+
+Hardware VPN Access :
+
+VPN : virtual private network..
+
+Hardware VPN Access : Network people -->>> create VPN create ==>>> link generate ===>> vpn link.
+
+VPN link ==>> the purpose of vpn link to connecting the client's network..
+
+Every project has one vpn link..
+
+How to access the vpn link ???
+
+vpn link ==>> click ==>>>> username and password ===>> second level security ===>>> RSA token ===>> 6 digits ( every one minit==>> change) ===>> after entering the 6 digits ==>> now you are in clients network..
+
+username and password ==>>> networking people ==>> email to us..
+
+How to access / connect application instances in your organization ???
+
+Note : you must be connect with vpn link..
+
+1. ramakrishna ==>> IBM ==>> client ==>> DBS ==>> singapore.
+
+2. ramakrishna ==>> need to login into the AWS account.
+
+3. Admin team ===>>> for ramakrishna they will create one aws account.
+
+4. ramakrishna will login into the AWS account with username and passowrd. ==>>> second level security. ( MFA ==>> multifactor authentication).
+
+second level security ==>>> 2 ways..
+
+1. mobile number.===>> OTP ==>>> 6 digits number =>> enter ==>> now you are in AWS account.
+
+2. we need to install mobile app ==>>> google authenticator ==>>> AWS account ==> QR code ==>> SCAN ==>> 6 digits number ==>> enter ==>> now you are in AWS account.
+
+IMportant key point :
+
+1. Jump servers / jump instances  / bastion host ===>> security.
+
+every project has 5 to 7 jump servers.
+
+2. Application instances ===>>> EU.
+
+first you need to login into jump server ==>>> after that you need to login into application instances..
+
+
+jumpserver ==>>> 192.168.5.10 ==>>> IPaddress ==>> through putty we will connect jumpserver.
+
+now you are in jump server. ==>> through ssh we will connect application instances..
+
+ssh -i /tmp/central.pem ec2-user@appinstanceIP( elastic / private ) ==>> enter ==>>> now you are in application instance.
+
+============================================================================================================================
+============================================================================================================================
+
+vpc peering :
+
+The main purpose of vpc peering is to communicate with different networks..
+
+Senario :
+
+application team ==>> 30.20.0.0/16
+
+admin team ==>> 60.20.0.0/16
+
+By making peering between these two teams ==>> files trasfter and remote userly application will install..
+
+VPC peering thumbrule :
+
+Both vpc's CIDR notations should not be collide to each other.
+
+VPC peering not supported transitive peering.
+
+vpc1 ==>>> vpc2 ==>> vpc3 ==>> vpc4
+
+vpc1 should not communicate with vpc3
+
+vpc2 should not communicate with vpc4.
+
+VPC peering ==>> who is the requester and accepter ===>> we will specify..
+
+key point : Both VPC CIDR notations are interchanged in both main routing tables..
+
+Then these two vpc's in between  ==>>> vpc peering connection established.
+
+VPC peering will be doing in 3 ways..
+
+1. same region.
+
+2. different region.
+
+3. different accounts / cross accounts..
+
+===============================================================================================
