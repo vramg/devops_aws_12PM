@@ -17,7 +17,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
-    <sonar.host.url>http://18.218.233.194:9000/</sonar.host.url>
+    <sonar.host.url>http://3.129.128.104:9000/</sonar.host.url>
   </properties>
 
   <dependencies>
@@ -28,6 +28,18 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+   <distributionManagement>
+		 <snapshotRepository>
+		    <id>nexusRepo</id>
+		    <url>http://3.143.213.206:8081/repository/sample-snapshot/</url>
+		 </snapshotRepository>
+		
+		 <repository>
+		    <id>nexusRepo</id>
+		    <url>http://3.143.213.206:8081/repository/sample-release/</url>
+		 </repository>
+  </distributionManagement>
 
   <build>
     <finalName>HOME_LONE</finalName>
