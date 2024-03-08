@@ -1,0 +1,68 @@
+EBS : elastic block storage.
+
+it is a block level storage.
+
+senario :
+
+Application team ==>> request raise to admin team ( ours) ===>> 500 gb volume ==>>> linux ec2 instance( app123)==> file system create ==>>> app5 ==>> mount point create ==>>> app install.
+
+EBS thumbrule :
+
+ec2 instance and volume should be in same availability zone.
+
+1. we need to create one ec2 instance in 2a ( AZ).
+
+2. create volume ===>> 500gb ==>> in 2a ( AZ).
+
+3. we will attach this volume to ec2 instance..
+
+device naming convensions:
+
+/dev/sda to /dev/sdp ==>> one ec2 instance ==>> we will create 16 volumes..
+
+/dev/sda to /dev/sde ==>> o.s will internally use these 5 volumes..
+
+we will create extranal volumes from /dev/sdf to /dev/sdp... ( 11 volumes)
+
+after login into the ec2 instance ==>> /dev/xvdf to /dev/xvdp..
+
+/dev/sdf ===>> /dev/xvdf 
+
+after login into the ec2 instance ==>> follow the below steps..
+
+1. fdisk -l ( o.s control )
+
+2. lsblk ===>>> kernel identification.
+
+3. mkfs.ext4 /dev/xvdf ===>>> creating the file system.
+
+4. mkdir app5 ==>> creating the directory..
+
+5. attaching a directory to the file system ==>>> mounting and app5 ==>> mount point.
+
+mount -t ext4 /dev/xvdf app5
+
+6. cat /etc/mtab
+
+7. we will make as this filesystem to be permanante..
+
+vi /etc/fstab
+
+devicename mountpoint typeoffilesystem defaults 0 ( dump ) 0 ( checksequence)
+
+/dev/xvdf /home/ec2-user/app5 ext4 defaults 0 0
+
+esc shift:wq! ==>> save. 
+
+8. cd app5
+
+ls
+
+lost + found 
+moun 
+
+touch {a..k}
+
+reboot ..
+
+=======================================================================
