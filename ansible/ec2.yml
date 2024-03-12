@@ -1,0 +1,24 @@
+---
+ - name: EC2 instance creation
+   hosts: localhost
+   become: true
+   tasks:
+    - pip:
+       name: boto
+    - name: Configuring  instance
+      ec2:
+        aws_access_key: AKIA2UVJRDYLM7IFP7V5
+        aws_secret_key: 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
+        region: us-east-2
+        image: ami-01387af90a62e3c01
+        count: 1
+        instance_type: t2.micro
+        key_name: key_connect
+        vpc_subnet_id: subnet-00aaa3da4284c563b
+        assign_public_ip: true
+        group: launch-wizard-1
+        wait: yes
+        instance_tags:
+          Name: ansible_jenkins
+        user_data: "{{ lookup('file', 'user_data.sh') }}"
+      register: ec2
