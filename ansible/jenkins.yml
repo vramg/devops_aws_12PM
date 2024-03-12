@@ -1,0 +1,22 @@
+---
+- hosts: node1
+  become: true
+  tasks:
+    - name: Installing java
+      yum: name=java-17-amazon-corretto.x86_64 state=present
+    - name: installing git
+      yum: name=git state=present
+    - name: adding the jenkins repo
+      ansible.builtin.get_url:
+        url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
+        dest: /etc/yum.repos.d/jenkins.repo
+    - name: adding the rpm key
+      rpm_key:
+        key: https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+        state: present
+    - name: jenkins installing
+      yum: name=jenkins state=present
+    - name: Jenkins server start
+      ansible.builtin.service:
+        name: jenkins
+        state: started
