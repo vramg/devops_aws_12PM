@@ -1,0 +1,71 @@
+yum install docker -y
+    2  docker --version
+    3  doker -version
+    4  doker --version
+    5  docker -version
+    6  docker --version
+    7  systemctl start docker.service
+    8  docker --version
+    9  systemctl status docker
+   10  docker images
+   11  docker ps
+   12  docker ps -a
+   13  docker network ls
+   14  docker volume ls
+   15  doker login
+   16  docker login
+   17  docker login
+   18  docker login
+   19  docker pull amazonlinux
+   20  docker images
+   21  docker inspect amazonlinux
+   22  docker images
+   23  docker run -it --name httpd-cont 1d4a29ad09d6
+   24  ls
+   25  docker ps
+   26  docker ps -a
+   27  docker start httpd-cont
+   28  docker ps
+   29  docker stop httpd-cont
+   30  docker pull jenkins
+   31  docker pull jenkins/jenkins
+   32  docker images
+   33  docker ps -a
+   34  docker start https-cont
+   35  docker start httpd-cont
+   36  docker exec -it /bin/bash
+   37  docker exec -it httpd-cont /bin/bash
+   38  ls
+   39  docker pull sonarqube
+   40  docker images
+   41  docker rmi amazonlinux
+   42  docker rmi 1d4a29ad09d6
+   43  docker ps
+   44  docker stop httpd-cony
+   45  docker stop httpd-cont
+   46  docker ps -a
+   47  docker rm httpd-cont
+   48  docker images
+   49  docker rmi amazonlinux
+   50  docker image ls
+   51  docker run -itd --name jenkins -p 8080:8080 jenkins/jenkins
+   52  docker run -itd --name sonar -p 9000:8081 sonarqube
+   53  docker ps
+   54  docker ps -a
+   55  docker ps
+   56  docker ps -a
+   57  docker ps
+   58  docker ps
+   59  docker ps -a
+   60  docker start sonar
+   61  docker ps
+   62  docker ps
+   63  docker ps -a
+   64  docker start sonar
+   65  docker ps
+   66  docker ps
+   67  dokcer ps
+   68  docker ps
+   69  docker stop jenkins
+   70  docker ps -a
+   71  docker inspect jenkins
